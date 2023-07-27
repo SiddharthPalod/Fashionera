@@ -1,0 +1,250 @@
+@media (max-width: 767px) {
+  /* Adjust font size for smaller screens */
+  :root {
+    font-size: 16px;
+  }
+
+  /* Reduce font-size and adjust margins/padding for smaller screens */
+  .Heading {
+    font-size: 48px;
+  }
+
+  .random-text {
+    margin-top: 10px;
+  }
+
+
+  /* Adjust .components layout for smaller screens */
+  .components {
+    margin: 10px;
+    padding: 10px;
+  }
+
+  /* Adjust image size and spacing for smaller screens */
+  #image-track > .image {
+    width: 30vmin;
+    height: 42vmin;
+  }
+
+  /* Adjust .form-wrapper layout for smaller screens */
+  .form-wrapper {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* Adjust .wrapper size for smaller screens */
+  .wrapper {
+    width: 90%;
+    height: 400px; /* You can adjust this height based on your design */
+  }
+
+  /* Adjust .wrapper.active size for smaller screens */
+  .wrapper.active {
+    height: 520px; /* You can adjust this height based on your design */
+  }
+}
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  --yellow: #f3af7c;
+  --gold: rgb(220, 144, 30);
+  --pale: #EDCBB1;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background: radial-gradient(circle at 76% 31%, rgb(30, 30, 30) 0%, rgb(15, 15, 15) 99.4%);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+@keyframes background-pan {
+  from {
+    background-position: 0% center;
+  }
+  
+  to {
+    background-position: -200% center;
+  }
+}
+
+h1 {
+  color: white;
+  font-family: "Rubik", sans-serif;
+  font-size: clamp(2em, 2vw, 4em);
+  font-weight: 400;
+  margin: 0px;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 > .magic {
+  animation: background-pan 3s linear infinite;
+  background: linear-gradient(
+    to right,
+    var(--yellow),
+    var(--gold),
+    var(--yellow),
+    var(--pale)
+  );
+  background-size: 200%;
+  -webkit-background-clip: text; 
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+
+body {
+  width: 100vw;
+  background-image: url(https://images.unsplash.com/photo-1541791230600-b62df7fa1cf0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE4fHxhYnN0cmFjdCUyMHNoYXBlc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60);
+  background-size: cover;
+  margin: 0rem;
+  overflow-x: hidden;
+}
+
+.components {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  padding: 20px;
+}
+
+.Heading{
+  font-size: 100px;
+  color: antiquewhite;
+  display: grid;
+}
+
+#image-track {
+  display: flex;
+  gap: 4vmin;
+  position:inherit;
+  user-select: none; 
+}
+
+#image-track > .image {
+  width: 40vmin;
+  height: 56vmin;
+  object-fit: cover;
+  object-position: 100% center;
+}
+
+
+.popup {
+  background: transparent;
+  backdrop-filter: blur(30px);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 100%;
+  transform: translateY(40%);
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+.expanded-image {
+  width: 100%;
+  height: 80%;
+  display: block;
+  z-index: 100;
+}
+.random-text {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  width: 100%;
+  font-size: 20px;
+  color: white;
+}
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--pale);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+.hero{
+  width: 100%;
+  height: 75%;
+  position:absolute;
+}
+
+.content{
+  text-align: center;
+  text-shadow: #f3af7c;
+  z-index: -1;
+}
+.content h2{
+  font-size: 100PX;
+  font-weight: 600;
+  color: #fff;
+  transition: color 0.3s ease; 
+  transform: translateY(55%);
+}
+
+.content h2:hover{
+  color: transparent;
+  -webkit-text-stroke: 2px #ffffff;
+}
+
+.content h1{
+  font-size: 80PX;
+  color: #fff;
+  font-weight: 600;
+}
+.content p{
+  font-size: 15px;
+  backdrop-filter: blur(10px);
+  text-align: left;
+  color: #fff;
+  -webkit-text-stroke: 2px #000;
+  font-weight: 600;
+  -webkit-text-stroke: #000;
+  text-shadow: #000;
+  transform: translateY(20%);
+}
+
+
+
+
+.bg-vid{
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -2;
+}
+@media (min-aspect-ratio: 16/9){
+  .bg-vid{
+    width: 100%;
+    height: auto;
+  }
+}
+
+

@@ -1,0 +1,213 @@
+.form-container {
+  display:flex;
+  align-items: center; /* Vertically center the content */
+  width: 100%;
+}
+.image-container {
+  flex: 0.9; /* Let the image container take up the remaining space */
+  padding-right: 20px; /* Add some spacing between the image and the form */
+}
+.image-container img {
+  max-width: 75%;
+  max-height: 100%;
+  flex-shrink: inherit;
+  display: none;
+}
+
+@media (min-aspect-ratio: 16/9){
+  .image-container img{
+    display: block;
+  }
+
+  /* Adjust .input-box styles for smaller screens */
+  .input-box {
+    margin: 15px 0;
+  }
+
+  .input-box label {
+    font-size: 0.9em;
+  }
+
+  .input-box input {
+    font-size: 0.9em;
+  }
+
+  .input-box .icon {
+    font-size: 1em;
+  }
+
+  /* Adjust .remember-forgot styles for smaller screens */
+  .remember-forgot {
+    font-size: 0.8em;
+    margin: -10px 0 10px;
+  }
+
+  /* Adjust .btn styles for smaller screens */
+  .btn {
+    height: 40px;
+    font-size: 0.9em;
+  }
+
+  /* Adjust .login-register styles for smaller screens */
+  .login-register {
+    font-size: 0.8em;
+    margin: 20px 0 5px;
+  }
+}
+
+.form-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper {
+  /* Adjust width to fit the form and the image */
+  width: 350px;
+  height: 400px;
+  background: transparent;
+  border: 2px solid #edcbb1be;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 30px rgba(f, f, f, 0.5);
+  display: flex;
+  justify-content: center; /* Center the form inside the wrapper */
+  align-items: center; /* Center the form inside the wrapper */
+  overflow: hidden;
+  transition: height 0.2s ease;
+}
+/* ------------------------------------------------------------------------------   */
+  .wrapper.active {
+    height: 520px;
+  }
+  
+  .wrapper.form-box {
+    width: 100%;
+    padding: 40px;
+  }
+  
+  .wrapper .form-box.login {
+    transition: transform .18s ease;
+    transform: translateX(0);
+  }
+  
+  .wrapper.active .form-box.login {
+    transition: none;
+    transform: translateX(-400px);
+  }
+  
+  .wrapper .form-box.register {
+    position: absolute;
+    transition: none;
+    transform: translateX(400px);
+  }
+  
+  .wrapper.active .form-box.register {
+    transition: transform .18s ease;
+    transform: translateX(0);
+  }
+  
+  .form-box h2{
+    font-size: 2em;
+    color: #EDCBB1;
+    text-align: center;
+  
+  }
+  
+  .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    border-bottom: 2px solid #EDCBB1;
+    margin: 30px 0;
+  }
+  
+  .input-box label{
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #EDCBB1;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .input-box input:focus~label,
+  .input-box input:valid~label{
+    top: -5px;
+  }
+  
+  
+  .input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    color: #EDCBB1;
+    font-weight: 600;
+    padding: 0 35px 0 5px;
+  }
+  
+  .input-box .icon{
+    position: absolute;
+    right: 8px;
+    font-size: 1.2em;
+    color: #EDCBB1;
+    line-height: 57px;
+  }
+  
+  .remember-forgot{
+    font-size: .9em;
+    color: #EDCBB1;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .remember-forgot label input{
+    accent-color: #EDCBB1;
+    margin-right: 3px;
+  }
+  .remember-forgot a{
+    color: #EDCBB1;
+    text-decoration: none;
+  }
+  
+  .remember-forgot a:hover{
+    color: #EDCBB1;
+    text-decoration: underline;
+  }
+  
+  .btn{
+    width: 100%;
+    height: 45px;
+    background: #EDCBB1;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    color: #000;
+  }
+  
+  .login-register{
+    font-size: .9em;
+    color: #EDCBB1;
+    text-align: center;
+    font-weight: 500;
+    margin: 25px 0 10px;
+  }
+  
+  .login-register p a{
+    color: #EDCBB1;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  
+  .login-register p a:hover{
+    text-decoration: underline;
+     
+  }
