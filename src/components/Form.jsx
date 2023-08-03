@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import loginbg from "./loginbg.png";
 
 const Form1 = () => {
   const [active, setActive] = useState(false);
@@ -12,28 +13,28 @@ const Form1 = () => {
   };
 
   return (
-    <div className="form-container" style={{  background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)'   }}>
-      <div className="sign-up-box">
-      <div className="box">
-        <p>Whether you're a designer, retailer, <br/>
-          or fashion-tech innovator, FashionFest <br/>
-          provides unparalleled exposure for your brand.<br/> 
-          Showcase your designs, collaborate with other <br/>
-          creatives, and expand your business horizons.</p>
-      </div>
-      <div className="box2">
-        <p>
-        FashionFest is the place to be for trendsetters<br/>
-        and influencers seeking<br/>
-        fresh content and a front-row seat<br/>
-        to the latest trends. Capture stunning <br/>
-        moments, curate engaging content, <br/>
-        and be a part of the fashion conversation<br/>
-         that captivates millions.<br/>
-        </p>
+  <div className="form" style={{backgroundImage: `url(${loginbg})`}}>
+      <div className="signUp">Sign Up</div>
+
+      <div className="signup-text1">
+          <p className="label">
+          <span style={{color:"black"}}>
+        Whether you&#39;re a designer, retailer, or fashion-tech innovator, FashionFest provides unparalleled exposure
+        for your brand. Showcase your designs, collaborate with other creatives, and expand your business horizons.
+        </span>
+          </p>
       </div>
 
+      <div className="signup-text2">
+          <p className="label">
+            <span style={{color:"#cbd9e2"}}>
+              FashionFest is the place to be for trendsetters and influencers seeking fresh content and a front-row seat
+              to the latest trends. Capture stunning moments, curate engaging content, and be a part of the fashion
+              conversation that captivates millions.
+            </span>
+          </p>
       </div>
+
 
 
     <div className={`wrapper${active ? " active" : ""}`}>
@@ -54,7 +55,7 @@ const Form1 = () => {
           <div className="login-register">
             <p>
               Don't have an account?
-              <a href="#" className="register-link" onClick={handleRegisterClick}>
+              <a className="register-link" onClick={handleRegisterClick}>
                 Sign-Up
               </a>
             </p>
@@ -83,7 +84,7 @@ const Form1 = () => {
           <div className="login-register">
             <p>
               Already have an account?
-              <a href="#" className="login-link" onClick={handleLoginClick}>
+              <a className="login-link" onClick={handleLoginClick}>
                 Login
               </a>
             </p>
