@@ -2,17 +2,25 @@ import React from 'react';
 import ImageSlider from './components/ImageSlider';
 import Form1 from "./components/Form"
 import About from './components/About';
+import Features from './components/Features';
+import Intro from './components/Intro';
 import "./Form.css"
+import bgimg from "./components/bgimg.png";
+
 
 const App = () => {
   return (
     <div>
-        <h1 style={{fontSize:120}}> <span className='magic'>FASHION FEST</span></h1>
-        <Form1 />
-        <h2 style={{fontSize:80, lineHeight:0}}>Events</h2>
+        {/* <Intro/>
+        <div className="side">
+        <h1 className='ev-title'>Events</h1>
+        </div>
         <ImageSlider />
-        <h1 style={{lineHeight:2}}></h1>  
-        <About/>  
+        <Features/> */}
+
+        {/* <h1 style={{lineHeight:2}}></h1>   */}
+        <Form1 />
+        {/* <About/>   */}
     </div>
   );
 };
