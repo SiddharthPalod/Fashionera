@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import bgimg from "./bgimg.png"
 
 const Form1 = () => {
   const [active, setActive] = useState(false);
@@ -13,35 +12,41 @@ const Form1 = () => {
   };
 
   return (
-    <div className="form-container">
-      <div className="image-container">
-        <img src={bgimg}></img>
+    <div className="form-container" style={{  background: 'linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%)'   }}>
+      <div className="sign-up-box">
+      <div className="box">
+        <p>Whether you're a designer, retailer, <br/>
+          or fashion-tech innovator, FashionFest <br/>
+          provides unparalleled exposure for your brand.<br/> 
+          Showcase your designs, collaborate with other <br/>
+          creatives, and expand your business horizons.</p>
       </div>
+      <div className="box2">
+        <p>
+        FashionFest is the place to be for trendsetters<br/>
+        and influencers seeking<br/>
+        fresh content and a front-row seat<br/>
+        to the latest trends. Capture stunning <br/>
+        moments, curate engaging content, <br/>
+        and be a part of the fashion conversation<br/>
+         that captivates millions.<br/>
+        </p>
+      </div>
+
+      </div>
+
 
     <div className={`wrapper${active ? " active" : ""}`}>
       <div className="form-box login" style={{ transform: `translateX(${active ? "-400px" : "0"})` }} >
         <h2>Login</h2>
         <form action="#">
           <div className="input-box">
-            <span className="icon">
-              <ion-icon name="mail"></ion-icon>
-            </span>
             <input type="email" required />
             <label>Email</label>
           </div>
           <div className="input-box">
-            <span className="icon">
-              <ion-icon name="lock-closed"></ion-icon>
-            </span>
             <input type="password" required />
             <label>Password</label>
-          </div>
-          <div className="remember-forgot">
-            <label>
-              <input type="checkbox" />
-              Remember me
-            </label>
-            <a href="#">Forgot Password?</a>
           </div>
           <button type="submit" className="btn">
             Login
@@ -61,32 +66,16 @@ const Form1 = () => {
         <h2>Sign-Up</h2>
         <form action="#">
           <div className="input-box">
-            <span className="icon">
-              <ion-icon name="person"></ion-icon>
-            </span>
             <input type="text" required />
             <label>Username</label>
           </div>
           <div className="input-box">
-            <span className="icon">
-              <ion-icon name="mail"></ion-icon>
-            </span>
             <input type="email" required />
             <label>Email</label>
           </div>
           <div className="input-box">
-            <span className="icon">
-              <ion-icon name="lock-closed"></ion-icon>
-            </span>
             <input type="password" required />
             <label>Password</label>
-          </div>
-          <div className="remember-forgot">
-            <label>
-              <input type="checkbox" />
-              Agree to
-              <a href="#"> T&amp;C</a>
-            </label>
           </div>
           <button type="submit" className="btn">
             Sign-Up
