@@ -4,21 +4,17 @@ import Form1 from "./components/Form"
 import About from './components/About';
 import Features from './components/Features';
 import Intro from './components/Intro';
-import "./Form.css"
-import bgimg from "./components/bgimg.png";
 
 
 const App = () => {
   return (
     <div>
-        {/* <Intro/>
+        <Intro/>
         <div className="side">
-        <h1 className='ev-title'>Events</h1>
+          <h1 className='ev-title'><span className='magic'>Events</span></h1>
         </div>
         <ImageSlider />
-        <Features/> */}
-
-        {/* <h1 style={{lineHeight:2}}></h1>   */}
+        <Features/>
         <Form1 />
         {/* <About/>   */}
     </div>
