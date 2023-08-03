@@ -1,50 +1,3 @@
-@media (max-width: 767px) {
-  /* Adjust font size for smaller screens */
-  :root {
-    font-size: 16px;
-  }
-
-  /* Reduce font-size and adjust margins/padding for smaller screens */
-  .Heading {
-    font-size: 48px;
-  }
-
-  .random-text {
-    margin-top: 10px;
-  }
-
-
-  /* Adjust .components layout for smaller screens */
-  .components {
-    margin: 10px;
-    padding: 10px;
-  }
-
-  /* Adjust image size and spacing for smaller screens */
-  #image-track > .image {
-    width: 30vmin;
-    height: 42vmin;
-  }
-
-  /* Adjust .form-wrapper layout for smaller screens */
-  .form-wrapper {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* Adjust .wrapper size for smaller screens */
-  .wrapper {
-    width: 90%;
-    height: 400px; /* You can adjust this height based on your design */
-  }
-
-  /* Adjust .wrapper.active size for smaller screens */
-  .wrapper.active {
-    height: 520px; /* You can adjust this height based on your design */
-  }
-}
-
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -62,24 +15,8 @@
   -webkit-text-size-adjust: 100%;
 }
 
-@keyframes background-pan {
-  from {
-    background-position: 0% center;
-  }
-  
-  to {
-    background-position: -200% center;
-  }
-}
-
-h1 {
-  color: white;
-  font-family: "Rubik", sans-serif;
-  font-size: clamp(2em, 2vw, 4em);
-  font-weight: 400;
-  margin: 0px;
-  padding: 20px;
-  text-align: center;
+html{
+  scroll-behavior: smooth;
 }
 
 h1 > .magic {
@@ -95,36 +32,107 @@ h1 > .magic {
   -webkit-background-clip: text; 
   -webkit-text-fill-color: transparent;
   white-space: nowrap;
-}
+} 
 
 
 body {
   width: 100vw;
   background-image: url(https://images.unsplash.com/photo-1541791230600-b62df7fa1cf0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE4fHxhYnN0cmFjdCUyMHNoYXBlc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=600&q=60);
   background-size: cover;
-  margin: 0rem;
-  overflow-x: hidden;
+  margin: 0px;
+  overflow-x: hidden;  
 }
 
-.components {
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
-  padding: 20px;
-}
-
-.Heading{
-  font-size: 100px;
-  color: antiquewhite;
+/* Features css */
+.side {
   display: grid;
+  height: 100%; /* Set a fixed height for .side */
+  overflow: hidden;
+  place-items: center;
+  position: absolute;
+  width: 100%;
 }
 
+.side .title {
+  font-family: "Kantumruy", sans-serif;
+  font-size: 9vw;
+  font-weight: 800;
+  margin: 0px 10vw;
+  width: 80vw;
+}
+
+.side .ev-title {
+  font-family: "Kantumruy", sans-serif;
+  font-size: 9vw;
+  font-weight: 800;
+  text-align: left;
+  width: 800vw;
+}
+
+#left-side {
+  background: radial-gradient(circle at 10% 20%, rgb(0, 0, 0) 0%, rgb(64, 64, 64) 90.2%);
+  width: 50%;
+  z-index: 2;
+  display: grid;
+  place-items: center;
+}
+
+#left-side .content {
+  position: absolute;
+  top: 25%;
+  left: 0%;
+  display: flex;
+  justify-content:center; /* Distribute items with space around */
+  align-items: center; /* Vertically center the items */
+  width: 100%;
+}
+
+#left-side .content .pair {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+  align-items: center;
+}
+
+#left-side .content h1 {
+  font-family: "Kantumruy", sans-serif;
+  opacity: 50%;
+  font-size: 9vw;
+  font-weight: bold;
+  padding: 10px 20px;
+  color: #D5E3EC;
+  margin: 0; /* Remove the default margin to avoid extra space */
+}
+
+#left-side .content p {
+  font-family: "Katibeh", sans-serif;
+  font-size: 2vw;
+  font-weight: 500;
+  padding: 10px 20px;
+  color: white;
+  margin: 0; /* Remove the default margin to avoid extra space */
+  text-align: center;
+} 
+
+#right-side {
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+}
+
+#right-side .title {
+  text-align: center;
+  color: black;
+}
+
+
+/* ImageSlider-css */
 #image-track {
   display: flex;
   gap: 4vmin;
-  position:inherit;
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(0%, -80%); 
   user-select: none; 
 }
 
@@ -133,48 +141,6 @@ body {
   height: 56vmin;
   object-fit: cover;
   object-position: 100% center;
-}
-
-
-.popup {
-  background: transparent;
-  backdrop-filter: blur(30px);
-  padding: 20px;
-  border-radius: 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  animation: fadeIn 0.3s ease-in-out;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 40%;
-  height: 100%;
-  transform: translateY(40%);
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 100;
-}
-.expanded-image {
-  width: 100%;
-  height: 80%;
-  display: block;
-  z-index: 100;
-}
-.random-text {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  width: 100%;
-  font-size: 20px;
-  color: white;
-}
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  width: 30px;
-  height: 30px;
-  background-color: var(--pale);
-  border-radius: 50%;
-  cursor: pointer;
 }
 
 
@@ -189,7 +155,7 @@ body {
   }
 }
 
-
+/* About-us css  */
 .hero{
   width: 100%;
   height: 75%;
@@ -231,20 +197,42 @@ body {
   transform: translateY(20%);
 }
 
+.header {
+  background-size: cover; 
+  background-position: center;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
-
-
-.bg-vid{
+.header-text {
+  font-family: "Katibeh", sans-serif;
+  text-align: center;
   position: absolute;
-  left: 0;
-  top: 0;
-  z-index: -2;
-}
-@media (min-aspect-ratio: 16/9){
-  .bg-vid{
-    width: 100%;
-    height: auto;
+  top: 20%;
+  left: 70%;
   }
+
+.header-text h1{
+  font-size: 80px;
+  color: black;
+  line-height:0cm;
 }
+
+.header-text h2 {
+  font-size: 40px;
+  color: #788494;
+  line-height:0;
+}
+
+.header-text h3 {
+  font-size: 20px;
+  color: black;
+  line-height:0.9;
+
+}
+
 
 
