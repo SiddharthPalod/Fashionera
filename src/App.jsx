@@ -16,7 +16,7 @@ const App = () => {
         <ImageSlider />
         <Features/>
         <Form1 />
-        {/* <About/>   */}
+        <About/>  
     </div>
   );
 };

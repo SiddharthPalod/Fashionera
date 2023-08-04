@@ -83,7 +83,7 @@ body {
   place-items: center;
 }
 
-#left-side .content {
+#right-side .content {
   position: absolute;
   top: 25%;
   left: 0%;
@@ -93,7 +93,7 @@ body {
   width: 100%;
 }
 
-#left-side .content .pair {
+#right-side .content .pair {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -101,22 +101,22 @@ body {
   align-items: center;
 }
 
-#left-side .content h1 {
+#right-side .content h1 {
   font-family: "Kantumruy", sans-serif;
   opacity: 50%;
   font-size: 9vw;
   font-weight: bold;
   padding: 10px 20px;
-  color: #D5E3EC;
+  color: black;
   margin: 0; /* Remove the default margin to avoid extra space */
 }
 
-#left-side .content p {
+#right-side .content p {
   font-family: "Katibeh", sans-serif;
   font-size: 2vw;
   font-weight: 500;
   padding: 10px 20px;
-  color: white;
+  color: black;
   margin: 0; /* Remove the default margin to avoid extra space */
   text-align: center;
 } 
@@ -125,9 +125,9 @@ body {
   background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
 }
 
-#right-side .title {
+#left-side .title {
   text-align: center;
-  color: black;
+  color: #D5E3EC;
 }
 
 
@@ -380,6 +380,103 @@ body {
     background-color: #fff;
   }
 
+/* About-us --------------------------------------------------------- */
+.about .ig-icon{
+  position: absolute;
+  top: 85%;
+  left: 10%;
+} 
 
+.about .icon-txt{
+  position: absolute;
+  line-height: 85%;
+  transform: translate(70%,-120%);
+  font-family: Katibeh, sans-serif;
+  color: #A1C6E8;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+} 
 
+.about .go-icon{
+  position: absolute;
+  top: 75%;
+  left: 10%;
+} 
 
+.about .icon-txt2{
+  position: absolute;
+  line-height: 85%;
+  transform: translate(70%,-120%);
+  font-family: Katibeh, sans-serif;
+  color: #A1C6E8;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
+} 
+
+.about .go-icon:hover .icon-txt2 {
+  visibility: visible;
+  opacity: 1;
+}
+
+.about .ig-icon:hover .icon-txt {
+  visibility: visible;
+  opacity: 1;
+}
+
+.about{
+  height: 100vh;
+  text-align: left;
+  transform: translateY(200%);
+  cursor:crosshair;
+}
+
+.cursor {
+  background-color: #D5E3EC;
+  height: 140px;
+  width: 140px;
+  border-radius: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.text-side{
+  overflow: hidden;
+  font-family: Katibeh, sans-serif;
+  line-height: 85%;
+  position: absolute;
+  top: 30%;
+  left:10%;
+  max-width: 30%;
+  font-size:x-large;
+}
+
+#top-view{
+  z-index: 2;
+  color: #D5E3EC;
+}
+
+#bottom-view{
+  color: #000;
+}
+
+.abt-img{
+  position: absolute;
+  top: 7%;
+  left: 50%;
+  scale: 0.8;
+  z-index: -1;
+  visibility: visible;
+}
+
+.abt-img-hidden{
+  visibility: hidden;
+  position: absolute;
+  top: 15%;
+  left: 45%;
+  scale: 0.8;
+  z-index: -1;
+}
