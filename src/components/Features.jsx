@@ -22,7 +22,13 @@ const Features = () => {
     <div>
       <div id="container">
         <div id="left-side" className="side" ref={leftRef}>
-          <div className="content">
+        <h2 className="title">Features</h2>
+        
+        </div>
+      </div>
+      <div id="container">
+        <div id="right-side" className="side">
+        <div className="content">
             <div className="pair">
               <h1>1</h1>
               <p>Exclusive Access to Pop-Up Boutiques</p>
@@ -44,11 +50,6 @@ const Features = () => {
               <p>Glamorous After-Party</p>
             </div>
           </div>
-        </div>
-      </div>
-      <div id="container">
-        <div id="right-side" className="side">
-          <h2 className="title">Features</h2>
         </div>
       </div>
     </div>
