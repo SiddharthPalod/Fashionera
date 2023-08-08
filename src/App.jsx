@@ -1,23 +1,20 @@
-import React from 'react';
-import ImageSlider from './components/ImageSlider';
-import Form1 from "./components/Form"
-import About from './components/About';
-import Features from './components/Features';
-import Intro from './components/Intro';
-
+import Page1 from "./pages/Page1";
+import Preload from "./pages/Preload";
+import Loginit from "./pages/Loginit"
+import Home from "./pages/Home";
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import { Eventpg, About } from "./components";
 
 const App = () => {
   return (
-    <div>
-        <Intro/>
-        <div className="side">
-          <h1 className='ev-title'><span className='magic'>Events</span></h1>
-        </div>
-        <ImageSlider />
-        <Features/>
-        <Form1 />
-        <About/>  
-    </div>
+    <main className="app transition-all ease-in">
+        <Home/>
+        {/* <Preload/>
+        <Page1/>
+        <Eventpg/>
+        <Loginit/>
+        <About/> */}
+    </main>
   );
 };
 

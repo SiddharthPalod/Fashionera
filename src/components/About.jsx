@@ -1,9 +1,11 @@
 import { Icon } from '@iconify/react';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
-import shoe from "./shoe.png"
-import purse from "./purse.png"
-
+import { shoe, qrcode} from '../assets';
+import React from 'react';
+import { useSnapshot } from 'valtio';
+import state from '../pages';
+import { AnimatePresence } from 'framer-motion';
 
 const About = () => {
   const [mousePosition, setMousePosition] = useState({
@@ -34,7 +36,7 @@ const About = () => {
     },
     icon: {
       height: 80,
-      width: 166,
+      width: 250,
       x: mousePosition.x - 40,
       y: mousePosition.y - 40,
       borderRadius: "0",
@@ -69,40 +71,33 @@ const About = () => {
     }
   };
 
-  const imgEnter = () => {
-    const shoe = document.querySelector('.abt-img');
-    const image = document.querySelector('.abt-img-hidden');
-    setCursorVariant("img")
-    shoe.style.visibility = 'hidden';
-    image.style.visibility = 'visible';
-    image.style.zIndex = "1";
-  };
-
-  const imgLeave = () => {
-    setCursorVariant("default")
-    const shoe = document.querySelector('.abt-img');
-    const image = document.querySelector('.abt-img-hidden');
-    shoe.style.visibility = 'visible';
-    image.style.visibility = 'hidden';
-    image.style.zIndex = "-1";
-  }
-
   const headEnter = () => setCursorVariant("head");
   const iconEnter = () => setCursorVariant("icon");
   const Leave = () => setCursorVariant("default");
+  const snap  = useSnapshot(state);
+  const handleClick = () => {
+    state.intro = true;
+    state.about = false;
+  };
+
 
   return (
-    <div className="about" style={{ background: 'black' }}>
-      <div className="signUp" style={{ color: "#D5E3EC" }} onMouseEnter={headEnter} onMouseLeave={Leave}>About Us</div>
+    <AnimatePresence>
+    {!snap.intro && snap.about && !snap.login &&(
+      <motion.div
+      key="modal"
+    >
+    <div className="about" style={{ background: '#F77269', transform:"translateY(0%)" }}>
+      <div className="signUp" style={{ color: "#fff" }} onMouseEnter={headEnter} onMouseLeave={Leave}>About Us</div>
       <div className='ig-icon'>
         <div style={{ transform: 'scale(2.5)' }} onMouseEnter={iconEnter} onMouseLeave={Leave}>
-          <Icon icon="ion:logo-instagram" color="#A1C6E8" />
+          <Icon icon="ion:logo-instagram" color="#fff" />
         </div>
         <h2 className='icon-txt'>Follow to get updates</h2>
       </div>
       <div className='go-icon'>
-        <div style={{ transform: 'scale(2.5)' }} onMouseEnter={iconEnter} onMouseLeave={Leave}>
-          <Icon icon="ion:logo-google" color="#A1C6E8" />
+        <div style={{ transform: 'scale(2.5) translateX(-12%)' }} onMouseEnter={iconEnter} onMouseLeave={Leave}>
+          <Icon icon="ion:logo-google" color="#fff" />
         </div>
         <h2 className='icon-txt2'>Fill this survey</h2>
       </div>
@@ -121,10 +116,14 @@ const About = () => {
         <p>We envision a world where fashion is more than just clothing; it's an expression of art, culture, and identity. Our mission is to create a platform that celebrates the diversity and creativity of the fashion world while providing opportunities for emerging talent to shine on a global stage.</p>
       </div>
 
-      <img src={shoe} alt="Product-Image" className='abt-img' onMouseEnter={imgEnter}></img>
-      <img src={purse} alt="Product-Image" className='abt-img-hidden' onMouseLeave={imgLeave}></img>
+      <img src={shoe} alt="Product-Image" className='abt-img'></img>
+      <p className='abt-hid-text'>  COUPON: QTP140D </p>
+      <img src={qrcode} alt="Product-Image" className='abt-img-hid'></img>
 
     </div>
+    </motion.div>
+    )}
+    </AnimatePresence>
   );
 };
 
