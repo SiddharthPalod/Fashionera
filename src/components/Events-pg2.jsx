@@ -28,6 +28,7 @@ const Eventpg = () => {
   const snap  = useSnapshot(state);
   const handleClick = () => {
     state.intro = true;
+    state.nav = true;
   };
 
 

@@ -11,19 +11,19 @@ const Preload = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      state.intro = true; }, x * 1000); 
+      state.home = true; state.nav= true; }, x * 1000); 
     return () => clearTimeout(timer);
   }, []);
 
   return (
     <AnimatePresence>
-      {!snap.intro && !snap.about && !snap.login && !snap.event && (
+      {!snap.intro && !snap.home && !snap.about && !snap.login && !snap.event && !snap.merch && !snap.nav &&(
         <motion.div
           key="modal"
           initial={{ scale: 1.5, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
           exit={{ scale: 1.5, opacity: 0 }}
-          transition={{ duration: 0.2, ease: 'easeInOut' }}
+          transition={{ duration: 0.2 ,ease:'easeInOut'}} 
         >
           <div style={{ textAlign: 'center', background: "#fff", height: "100vh", overflow: "hidden" }}>
             <h1 style={{ fontFamily: "Bree Serif", fontSize: "50px", transform: "translateY(30%)" }}>

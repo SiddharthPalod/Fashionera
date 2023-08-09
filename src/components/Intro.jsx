@@ -16,7 +16,7 @@ const Intro = () => {
             <div className="header-text">
                 <h1 style={{fontFamily:"Pacifico"}}>Confihara</h1>
                 <motion.div className="line" variants={containerVariants} initial="hidden" animate="visible">  </motion.div>
-                <motion.div variants={textVariants} initial="hidden" animate="visible"><h2>19 Oct 2023</h2></motion.div>
+                <motion.div variants={textVariants} initial="hidden" animate="visible"><h2>19 Nov 2023</h2></motion.div>
                 <h3>Login in to get notified when<br/> tickets booking starts</h3>
             </div>
         </div>

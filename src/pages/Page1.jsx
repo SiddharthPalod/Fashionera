@@ -10,20 +10,22 @@ const Page1 = () => {
   const snap = useSnapshot(state);
   return (
     <AnimatePresence>
-      {snap.intro &&(
+      {snap.intro && !snap.home &&(
                 <motion.div
                 key="modal"
                 initial={{ scale: 1.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 exit={{ scale: 1.5, opacity: 0 }}
-                transition={{ duration: 0.2 ,ease:'easeInOut'}} 
+                transition={{ duration: 0.2 ,ease:'easeInOut'}}
+                style={{background:"black"}} 
               >
       <Intro />
       <Festpg2/>
       <div className="side">
         <h1 className='ev-title' style={{fontFamily:"League Gothic", fontSize:"200px", transform:"translateX(1%)", wordSpacing:"-2%"}}><span className='magic'>Events</span></h1>
       </div>
-      <Events handleClick={()=> {state.intro = false, state.event = true}} />
+      <Events handleClick={()=> {state.intro = false; state.event = true; state.nav = false; const originalXOffset = window.scrollX;window.scrollTo(originalXOffset, 0);}} />
+
       <Festpg4/>
       </motion.div>
     )}

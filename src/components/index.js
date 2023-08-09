@@ -11,8 +11,10 @@ import Homepg1 from "./Homepg1";
 import Homepg2 from "./Homepg2";
 import Homepg3 from "./Homepg3";
 import Homepg4 from "./Homepg4";
-
-
+import Merchpg1 from "./Merchpg1";
+import Merchpg2 from "./Merchpg2";
+import NewsItem from "./NewsItem";
+import Navbar from "./Navbar";
 
 export {
     About,
@@ -20,4 +22,7 @@ export {
     ImageSlider,
     Intro,Festpg2,Events,Eventpg,Festpg4,
     Homepg1,Homepg2,Homepg3,Homepg4,
+    Merchpg1,Merchpg2,
+    NewsItem,
+    Navbar,
 };
