@@ -6,7 +6,7 @@ import state from '../pages';
 import { company } from '../assets';
 
 
-const Navbar = () => {
+const Navbar = ({name}) => {
     const snap = useSnapshot(state);
     const [showNav, setShowNav] = useState(false);
     const [wobble,setWobble] = useState(0);
@@ -118,7 +118,10 @@ const Navbar = () => {
                                     window.scrollTo(originalXOffset, 0);}}
                                 >
                                     <ion-icon name="person-outline" style={{transform:"translate(0vmin,22%)"}}></ion-icon>
-                                    <span className="icon-txt3" >Login/SignUp</span>
+                                    {name?
+                                    (<span style={{fontSize:"0.7em"}}>{name}</span>):
+                                    (<span className="icon-txt3" >Login/SignUp</span>)
+                                    }
                                 </div>
                             </div>
                         )} 

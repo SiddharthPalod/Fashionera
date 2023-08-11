@@ -62,7 +62,9 @@ const Festpg4 = () => {
 
       <div className='go-icon'>
         <div style={{ transform: 'scale(2.5)' }} onMouseEnter={iconEnter} onMouseLeave={Leave}>
+            <a href="mailto:goldjain2@gmail.com?subject=Confihara Event Query  &body=Hey i have some queries regarding the fest.">
             <Icon icon="ion:mail-outline" color="#fff" />
+            </a>
         </div>
         <h2 className='icon-txt2' style={{  color: "white"}}>Mail us your queries</h2>
       </div>

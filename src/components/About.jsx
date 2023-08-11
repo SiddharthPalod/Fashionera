@@ -99,7 +99,9 @@ const About = () => {
       </div>
       <div className='go-icon'>
         <div style={{ transform: 'scale(2.5) translateX(-12%)' }} onMouseEnter={iconEnter} onMouseLeave={Leave}>
+          <a href='https://docs.google.com/forms/d/e/1FAIpQLSewJGYUu2t7tK1CA8gwMOC3YJMSDBcoXnTROA7N3ATfXtJlug/viewform' target='_blank' rel='noopener noreferrer'>
           <Icon icon="ion:logo-google" color="#fff" />
+          </a>
         </div>
         <h2 className='icon-txt2'>Fill this survey</h2>
       </div>

@@ -561,6 +561,8 @@ body {
     width: 100%;
     height: 7cqh;
     background: #fff;
+    border-radius: 20px;
+    border: 0px;
     cursor: pointer;
     font-size: 1em;
     font-weight: 500;
