@@ -91,7 +91,9 @@ const About = () => {
       <div className="signUp" style={{ color: "#fff" }} onMouseEnter={headEnter} onMouseLeave={Leave}>About Us</div>
       <div className='ig-icon'>
         <div style={{ transform: 'scale(2.5)' }} onMouseEnter={iconEnter} onMouseLeave={Leave}>
+          <a href='https://www.instagram.com/siddharthpalod/' target='_blank' rel='noopener noreferrer'>
           <Icon icon="ion:logo-instagram" color="#fff" />
+          </a>
         </div>
         <h2 className='icon-txt'>Follow to get updates</h2>
       </div>

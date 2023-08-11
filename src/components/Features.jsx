@@ -19,7 +19,7 @@ const Features = () => {
   }, []);
 
   return (
-    <div>
+    <div  style={{transform:"translateY(100%)", height:"100vh"}}>
       <div id="container">
         <div id="left-side" className="side" ref={leftRef}>
         <h2 className="title">Features</h2>
@@ -31,11 +31,11 @@ const Features = () => {
         <div className="content">
             <div className="pair">
               <h1>1</h1>
-              <p>Exclusive Access to Pop-Up Boutiques</p>
+              <p>Exclusive Access to Latest News</p>
             </div>
             <div className="pair">
               <h1>2</h1>
-              <p>Awe-Inspiring Fashion Showcases</p>
+              <p>Alerts about Fashion Showcases</p>
             </div>
             <div className="pair">
               <h1>3</h1>
@@ -47,7 +47,7 @@ const Features = () => {
             </div>
             <div className="pair">
               <h1>5</h1>
-              <p>Glamorous After-Party</p>
+              <p>Notification about our merch</p>
             </div>
           </div>
         </div>

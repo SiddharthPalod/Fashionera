@@ -66,7 +66,7 @@ function Homepg4() {
         </div>
         <div style={{fontSize:"15vw", transform:"translateX(-20%)"}}>TIPS</div>
         </div>
-        <div style={{color:"white"}} onClick={() => {
+        <div style={{color:"white",cursor:"pointer"}} onClick={() => {
             const originalXOffset = window.scrollX;
             state.merch = true;
             state.home = false;

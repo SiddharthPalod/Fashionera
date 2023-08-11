@@ -10,7 +10,6 @@ const Navbar = () => {
     const snap = useSnapshot(state);
     const [showNav, setShowNav] = useState(false);
     const [wobble,setWobble] = useState(0);
-
     const toggleNav = () => {
         setShowNav(!showNav);
         setWobble(1);
@@ -38,7 +37,7 @@ const Navbar = () => {
                                 transition={{ duration: 0.8, ease: 'easeInOut' }}  
                             />
                             <motion.div className='nav-items'>
-                                <div onClick={() => {
+                                <div style={{cursor:"pointer"}} onClick={() => {
                                     const originalXOffset = window.scrollX;
                                     for (const key in state) {
                                         if (key == 'home' || key == 'nav') {
@@ -50,7 +49,7 @@ const Navbar = () => {
                                     }
                                     window.scrollTo(originalXOffset, 0);}}
                                 >Home</div>
-                                <div onClick={() => {
+                                <div  style={{cursor:"pointer"}} onClick={() => {
                                     const originalXOffset = window.scrollX;
                                     for (const key in state) {
                                         if (key == 'intro' || key == 'nav') {
@@ -61,7 +60,7 @@ const Navbar = () => {
                                         }
                                     }
                                     window.scrollTo(originalXOffset, 0);}}>Fests</div>
-                                <div onClick={() => {
+                                <div  style={{cursor:"pointer"}} onClick={() => {
                                     const originalXOffset = window.scrollX;
                                     for (const key in state) {
                                         if (key == 'news' || key == 'nav') {
@@ -72,7 +71,7 @@ const Navbar = () => {
                                         }
                                     }
                                     window.scrollTo(originalXOffset, 0);}}>News</div>
-                                <div onClick={() => {
+                                <div  style={{cursor:"pointer"}} onClick={() => {
                                     const originalXOffset = window.scrollX;
                                     for (const key in state) {
                                         if (key == 'merch' || key == 'nav') {
@@ -83,7 +82,7 @@ const Navbar = () => {
                                         }
                                     }
                                     window.scrollTo(originalXOffset, 0);}}>Merch</div>
-                                <div onClick={() => {
+                                <div  style={{cursor:"pointer"}} onClick={() => {
                                     const originalXOffset = window.scrollX;
                                     for (const key in state) {
                                         if (key == 'about' || key == 'nav') {
@@ -105,7 +104,7 @@ const Navbar = () => {
                         )} 
                         {!showNav && (
                             <div>
-                                <div style={{ transform: 'scale(2) translate(0vmin,20%)', color: '#FA6CB2' }} 
+                                <div className="nav-login"
                                 onClick={() => {
                                     const originalXOffset = window.scrollX;
                                     for (const key in state) {
@@ -118,7 +117,8 @@ const Navbar = () => {
                                     }
                                     window.scrollTo(originalXOffset, 0);}}
                                 >
-                                    <ion-icon name="person-outline"></ion-icon>
+                                    <ion-icon name="person-outline" style={{transform:"translate(0vmin,22%)"}}></ion-icon>
+                                    <span className="icon-txt3" >Login/SignUp</span>
                                 </div>
                             </div>
                         )} 

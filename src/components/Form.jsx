@@ -14,7 +14,7 @@ const Form1 = () => {
   };
 
   return (
-  <div className="form" id="signup" style={{background:`#FA6CB2`, transform:"translateY(100%)" }}>
+  <div className="form" id="signup" style={{background:`#FA6CB2` }}>
       <div className="form-text">Be part of <br/> our Family</div>
 
     <div className={`wrapper${active ? " active" : ""}`}>

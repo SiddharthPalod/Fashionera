@@ -53,13 +53,7 @@ function News() {
                     }}>
                     <div className='row'>
                         <div className='col-md-3'>
-                            <NewsItem title='' description=''/>
-                        </div>
-                        <div className='col-md-3'>
-                            <NewsItem title='' description=''/>
-                        </div>
-                        <div className='col-md-3'>
-                            <NewsItem title='' description=''/>
+                            <NewsItem offset={5} n={3}/> {/* page 1 */}
                         </div>
                     </div>
 
@@ -68,27 +62,41 @@ function News() {
                 <div className="page" style={{
                     backgroundColor:"#EEEEEE",
                 }}>
+                    <div className='row'>
+                        <div className='col-md-3'>
+                            <NewsItem offset={8} n={3}/> {/* page 2 */}
+                        </div>
+                    </div>
 
                 </div>
                 <div className="page" style={{
                     backgroundColor:"#EEEEEE",
                 }}>
+                  <div className='col-md-3'>
+                    <NewsItem offset={11} n={3}/> {/* page 3 */}
+                  </div>
 
                 </div>
                 <div className="page" style={{
                     backgroundColor:"#EEEEEE",
                 }}>
-
+                  <div className='col-md-3'>
+                    <NewsItem offset={14} n={4}/> {/* page 4 */}
+                  </div>
                 </div>
                 <div className="page" style={{
                     backgroundColor:"#EEEEEE",
                 }}>
-
+                  <div className='col-md-3'>
+                    <NewsItem offset={18} n={4}/> {/* page 5 */}
+                  </div>
                 </div>
                 <div className="page" style={{
                     backgroundColor:"#EEEEEE",
                 }}>
-
+                  <div className='col-md-3'>
+                    <NewsItem offset={22} n={3}/> {/* page 6 */}
+                  </div>
                 </div>            
             </div>
         </div>

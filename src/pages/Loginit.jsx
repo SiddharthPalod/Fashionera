@@ -19,8 +19,8 @@ const Loginit = () => {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
         >
-          <Features/>
           <Form1/>
+          <Features/>
         </motion.div>
       )}
     </AnimatePresence>

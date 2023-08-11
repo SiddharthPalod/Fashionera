@@ -722,6 +722,7 @@ li span {
 }
 
 .homepg3-btn{
+  cursor: pointer;
   font-family: Lusitana, sans-serif;
   text-align: center;
   transform: translate(140%,-38vw);
@@ -795,6 +796,23 @@ li span {
   }
 }
 
+.nav-login{
+  transform: scale(2);
+  color: #FA6CB2;
+  cursor:pointer;
+}
+
+.icon-txt3{
+  opacity: 0;
+  font-size: 0.6em;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.nav-login:hover .icon-txt3{
+  opacity: 1;
+}
+
+
 /* news css ----------------------------------------------*/
 .newsbg{
   height: 100vw;
@@ -826,7 +844,7 @@ li span {
 }
 .newsbg .book {
   perspective: 250vw;
-  transform: translateX(10%);
+  transform: translate(10%,-20%);
 }
 .newsbg .book .pages {
   width: 80vw;
@@ -921,4 +939,12 @@ li span {
 }
 .newsbg.page:nth-child(odd){
   background-position: right top;
+}
+
+
+/* newsitem css */
+
+.news-item-box{
+  display: grid;
+  margin-right: 10%;
 }

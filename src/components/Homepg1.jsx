@@ -6,7 +6,7 @@ import state from '../pages'
 function Homepg1() {
   return (
     <div style={{background:"white", color:"black", display:"block", overflow:"hidden"}}>
-        <div style={{color:"white"}} onClick={() => {
+        <div style={{color:"white",cursor:"pointer"}} onClick={() => {
             const originalXOffset = window.scrollX;
             state.merch = true;
             state.home = false;
@@ -22,7 +22,7 @@ function Homepg1() {
             state.merch = true;
             state.home = false;
             window.scrollTo(originalXOffset, 0);
-        }}  style={{background:"#FDD9D7", color:"black", width:"32vh", height:"24vh", transform:"translate(70vw,-170%)"}}>
+        }}  style={{background:"#FDD9D7", color:"black", cursor:"pointer",width:"32vh", height:"24vh", transform:"translate(70vw,-170%)"}}>
             <p style={{fontFamily:"Lusitana", fontSize:"20px", textAlign:"center", lineHeight:"120%", transform:"translateY(50%)"}}>Check out our latest releases and get dazzled</p>
         </div>
     </div>

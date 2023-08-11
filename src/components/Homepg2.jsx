@@ -16,7 +16,12 @@ function Homepg2() {
         <div style={{width:"2%"}}/>
         <div style={{display:"block"}}>
         <div style={{fontSize:"15vw", transform:"translate(0%,40%)"}}>NEWS</div>
-        <div style={{background:"#FDD9D7", color:"black", width:"12vw", height:"6vh", borderRadius:"20px",transform:"translate(50%,150%)"}}>
+        <div style={{background:"#FDD9D7", color:"black", width:"12vw", height:"6vh", borderRadius:"20px",transform:"translate(50%,150%)", cursor:"pointer"}} onClick={() => {
+            const originalXOffset = window.scrollX;
+            state.news = true;
+            state.home = false;
+            window.scrollTo(originalXOffset, 0);
+        }}>
             <p style={{fontFamily:"Lusitana", fontSize:"14px", fontWeight:"bolder",textAlign:"center", lineHeight:"120%", transform:"translateY(50%)"}}>find out what’s in</p>
         </div>
         </div>
