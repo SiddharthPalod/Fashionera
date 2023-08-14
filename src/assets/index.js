@@ -1,5 +1,5 @@
-import shoe from "./shoe.png"
-import qrcode from "./qrcode.png"
+import shoe from "./shoe.png";
+import qrcode from "./qrcode.png";
 import loginbg from "./loginbg.png";
 import merchbg from "./merchbg.png";
 import bgimg from "./bgimg.png";

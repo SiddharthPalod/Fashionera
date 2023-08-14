@@ -4,7 +4,8 @@ import { AnimatePresence } from 'framer-motion';
 import { useSnapshot } from 'valtio';
 import state from '../pages';
 import { company } from '../assets';
-
+import { auth } from '../firebase';
+import { Icon } from '@iconify/react';
 
 const Navbar = ({name}) => {
     const snap = useSnapshot(state);
@@ -14,6 +15,16 @@ const Navbar = ({name}) => {
         setShowNav(!showNav);
         setWobble(1);
     };
+
+    const handleLogout = async () => {
+        try {
+            await auth.signOut(); // Sign out the user from Firebase
+            state.name = null;
+        } catch (error) {
+            console.error('Error logging out:', error);
+        }
+    };
+    
 
     return (
         <AnimatePresence>
@@ -119,7 +130,10 @@ const Navbar = ({name}) => {
                                 >
                                     <ion-icon name="person-outline" style={{transform:"translate(0vmin,22%)"}}></ion-icon>
                                     {name?
-                                    (<span style={{fontSize:"0.7em"}}>{name}</span>):
+                                    (<span style={{fontSize:"0.7em"}}>{name} <button className='logout-btn' onClick={handleLogout}> 
+                                    <Icon icon="ion:log-out" color="#FA6CB2" />
+                                    </button></span>
+                                    ):
                                     (<span className="icon-txt3" >Login/SignUp</span>)
                                     }
                                 </div>

@@ -14,68 +14,72 @@ const Form1 = () => {
   };
 
 // loginned user name 
-const [userName, setUserName] = useState("");
+  const [userName, setUserName] = useState("");
 
-useEffect(() => {
-  auth.onAuthStateChanged((user) => {
-    if (user) {
-      console.log("Username", user);
-      setUserName(user.displayName);
-      console.log("User:", userName);
-    } else {
-      console.log("No user");
-      setUserName("");
-    }
-  });
-}, []);
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        console.log("Username", user);
+        setUserName(user.displayName);
+        console.log("User:", userName);
+      } else {
+        console.log("No user");
+        setUserName("");
+      }
+    });
+  }, []);
 
 
 // login
-const [valuet, setValuet] = useState({
-  email: "",
-  pass: "",
-});
-const [errorMsgt, setErrorMsgt] = useState("");
+  const [valuet, setValuet] = useState({
+    email: "",
+    pass: "",
+  });
+  const [errorMsgt, setErrorMsgt] = useState("");
 
-const handleSubmissiont = () => {
-  if (!valuet.email || !valuet.pass) {
-    setErrorMsgt("Fill all fields");
-    return;
-  }
-  setErrorMsgt("");
-  signInWithEmailAndPassword(auth, valuet.email, valuet.pass)
-    .then(async (res) => {
-    })
-    .catch((err) => {
-      setErrorMsgt(err.message);
-    });
-};
-
-// sign up
-const [values, setValues] = useState({
-  name: "",
-  email: "",
-  pass: "",
-});
-const [errorMsg, setErrorMsg] = useState("");
-const handleSubmission = () => {
-  if (!values.name || !values.email || !values.pass) {
-    setErrorMsg("Fill all fields");
-    return;
-  }
-  setErrorMsg("");
-  createUserWithEmailAndPassword(auth, values.email, values.pass)
-    .then(async (res) => {
-      const user = res.user;
-      await updateProfile(user, {
-        displayName: values.name,
+  const handleSubmissiont = () => {
+    if (!valuet.email || !valuet.pass) {
+      setErrorMsgt("Fill all fields");
+      return;
+    }
+    setErrorMsgt("");
+    signInWithEmailAndPassword(auth, valuet.email, valuet.pass)
+      .then(async (res) => {
+        window.location.reload(); // Refresh the whole website
+      })
+      .catch((err) => {
+        setErrorMsgt(err.message);
       });
-    })
-    .catch((err) => {
-      setErrorMsg(err.message);
-    });
-};
+  };
+//signup
+  const [values, setValues] = useState({
+    name: "",
+    email: "",
+    pass: "",
+  });
+  const [errorMsg, setErrorMsg] = useState("");
 
+  const handleSubmission = () => {
+    if (!values.name || !values.email || !values.pass) {
+      setErrorMsg("Fill all fields");
+      return;
+    }
+    setErrorMsg("");
+    createUserWithEmailAndPassword(auth, values.email, values.pass)
+      .then(async (res) => {
+        const user = res.user;
+        await updateProfile(user, {
+          displayName: values.name,
+        });
+        setUserName(values.name); 
+        setTimeout(() => {
+          window.location.reload();
+        }, 500);      
+      })
+      .catch((err) => {
+        setErrorMsg(err.message);
+      });
+  };
 
   return (
   <div className="form" id="signup" style={{background:`#FA6CB2` }}>

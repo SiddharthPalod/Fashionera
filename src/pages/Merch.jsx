@@ -6,7 +6,7 @@ import { AnimatePresence } from 'framer-motion';
 import { motion } from 'framer-motion';
 
 
-function Merch() {
+function Merch({name}) {
   const snap = useSnapshot(state);    
   return (
     <AnimatePresence>
@@ -19,7 +19,7 @@ function Merch() {
                 transition={{ duration: 0.2 ,ease:'easeInOut'}} >
     <div>
         <Merchpg1/>
-        <Merchpg2/>
+        <Merchpg2 namer={name}/>
     </div>
     </motion.div>)}
     </AnimatePresence>

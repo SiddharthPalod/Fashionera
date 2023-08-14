@@ -35,7 +35,7 @@ const App = () => {
         <Eventpg/>
         <Loginit/>
         <News/>
-        <Merch/>
+        <Merch name={userName}/>
         <About/>
     </main>
   );

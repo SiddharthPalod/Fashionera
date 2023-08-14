@@ -762,6 +762,14 @@ li span {
   margin: 3%;
 }
 
+.logout-btn{
+  cursor:pointer;
+  width: fit-content;
+  border: 0px;
+  background-color: transparent;
+  transform: translate(20%,13%);
+}
+
 .nav-box {
   position: absolute;
   top: 22%;
