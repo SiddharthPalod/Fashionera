@@ -1,9 +1,10 @@
 
-# Fashion Fest
+# Fashionera
 
 This website is your goto resource for anything Fashion related from latest fashion trends to fashion news its your one-stop solution for all
 
-
+## Demo link
+https://youtu.be/ZpU84dK2G84
 
 ## Installation
 
@@ -22,7 +23,7 @@ This will start the project on http://localhost:5173
     css
     javascript
     jsx
-    firebase
+    firebase (for login/signup)
     news api
     valtio (for conditional routing)
     framer motion
@@ -288,13 +289,14 @@ For a glamour-based website. I knew I had to push my limits in UI/UX design to m
 
 Being a fashion enthusiast. I know how hard it is to keep up with the latest fashion therefore I got the idea of implementing an news page. 
 
-I started by creating a fashion-based event website therefore the bad naming of some modules the whole design was dumped after 15 days of work and I started designing an bigger website that not only contains events but much more from merch to login/signup page
+I started by creating a fashion-based event website, therefore, the bad naming of some modules the whole design was dumped after 15 days of work and I started designing a bigger website that not only contains events but much more from merch to login/signup page
 
 Navbar was added around the end as it had to link all other components with himself from Valtio library things became as simple as using basic if else conditions
 
-I used my prev 15-day components in the main website strageticly placing them wherever necessary.
-## Demo link
-https://www.youtube.com/
+I used my prev 15-day components in the main website strategically placing them wherever necessary.
+
+It was my first time doing such a big project and I used as many new technologies for me as were suitable for the website
+
 ## Authors
 
  [SiddharthPalod IMT2022002](https://www.github.com/SiddharthPalod)
